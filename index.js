@@ -63,6 +63,9 @@ const questions = [
 
 //Function that writes README file
 function writeToFile(fileName, data) {
+    //fs = file systems
+    //cwd = current working directory
+    //the function creates the readme.md file; replaces the file if it already exists
     return fs.writeFileSync(path.join(process.cwd(),fileName), data)
 }
 
