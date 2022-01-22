@@ -23,7 +23,7 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license ! = '') {
+  if (license != '') {
     //if license is not empty, print below in the license section in the README.md
     return `## License
     ${license}
@@ -36,8 +36,21 @@ function renderLicenseSection(license) {
 
 function renderTestLink(tests) {
   if (tests != '') {
+    //if tests is not empty, print below in the README.md
     return `* [Tests](#tests)`
   } else {
+    //else if it is empty, return blank
+    return '';
+  }
+}
+
+function renderTestSection(tests) {
+  if (tests != '') {
+    //if tests is not empty, print below in the tests section in the README.md
+    return `## Tests
+    ${tests}`
+  } else {
+    //else if it is empty, return blank
     return '';
   }
 }
@@ -45,7 +58,28 @@ function renderTestLink(tests) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  ${renderLicenseBadge(data.license)}
+  ## Description
+  ${data.description}
 
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  ${renderLicenseLink(data.license)}
+  * [Contribution](#contribution)
+  ${renderTestLink(data.tests)}
+  * [Questions](#questions)
+
+  ## Installation
+  ${data.installation}
+
+  ## Usage
+  ${data.usage}
+
+  ${renderLicenseSection(data.license)}
+
+  ## Contribution
+  ${data.contribution}
 `;
 }
 
