@@ -36,7 +36,7 @@ const questions = [
     {
         name: 'license',
         type: 'list',
-        message: 'Choose license(s).'
+        message: 'Choose license(s).',
         choices: ['', 'Apache', 'GNU', 'MIT', 'BSD', 'Boost', 'Creative', 'Eclipse', 'Mozilla', 'The Unlicense']
     },
     {
@@ -61,17 +61,21 @@ const questions = [
     },
 ];
 
+//Function that writes README file
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(),fileName), data)
+}
 
-// TODO: Create an array of questions for user input
-const questions = [];
+//Function that initializes app
+function init() {
+    inquirer.prompt(questions)
+    .then((answers) => {
+        //console.log(answers.title);
+        writeToFile('newReadme.md', generateMarkdown({...answers}))
+    })
+}
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
+// Function call that initializes the app
 init();
 
 
