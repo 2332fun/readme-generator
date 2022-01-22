@@ -80,6 +80,12 @@ function generateMarkdown(data) {
 
   ## Contribution
   ${data.contribution}
+
+  ${renderTestSection(data.tests)}
+
+  ## Questions
+
+  If you have any questions, please contact me via email: ${data.email} or via github: ${data.github}.
 `;
 }
 
