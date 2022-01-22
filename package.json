@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/2332fun/readme-generator/issues"
   },
-  "homepage": "https://github.com/2332fun/readme-generator#readme"
+  "homepage": "https://github.com/2332fun/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
 }
